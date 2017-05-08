@@ -16,24 +16,34 @@ public class PetServiceImpl implements PetService {
 	@Autowired
 	private PetRepository petRepo; 
 	
-	// Retrieve pet by unique id (primary key)
+	/*
+	 * Retrieve a pet by its id
+	 */
 	public Pet getPetById(int id){
 		return isAvailable(id); 
 	}
 	
-	// Update the inventory of pets with a new pet
 	
+	/*
+	 * Update the inventory of pets with a new pet
+	 */	
 	public void update(int id, Pet pet){
 		create(isAvailable(id)); 
 	}
 	
-	// Create new pet
+	
+	/*
+	 * Create new pet
+	 */	
 	@Transactional
 	public Pet create(Pet pet){
 		Pet p = petRepo.save(pet);
 		return p; 
 	}
 	
+	/*
+	 * Retrieve all pets
+	 */
 	@SuppressWarnings("unchecked")
 	public List<Pet> findAllPets(){
 		List<Pet> pets = petRepo.findAll(); 
@@ -45,7 +55,10 @@ public class PetServiceImpl implements PetService {
 			
 	}
 
-	// Remove a pet from the store
+	
+	/*
+	 * Remove a pet from the store
+	 */
 	public void remove(int id){
 		Pet pet = isAvailable(id); 
 		if(pet != null){
@@ -53,6 +66,9 @@ public class PetServiceImpl implements PetService {
 		}
 	}
 
+	
+	
+	
 	public List<Pet> findAllPetsByColor() {
 		// TODO Auto-generated method stub
 		return null;
@@ -63,7 +79,10 @@ public class PetServiceImpl implements PetService {
 		return null;
 	}
 	
-	//Helper 
+	
+	/*
+	 * Helper method to check if pet is available
+	 */
 	public Pet isAvailable(int id){
 		Pet pet = Optional.ofNullable(petRepo.findOne(id)).orElseThrow(IllegalStateException::new); 
 		return pet; 
