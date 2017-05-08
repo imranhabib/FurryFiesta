@@ -1,0 +1,113 @@
+
+
+
+<!--  Search section that lists all pets  -->
+<div class="jumbotron text-center" style="background: none; height: 300px;">
+<h3>Search<span class="label label-success"></span></h3>
+<a name="search"></a>
+<div class="row search">
+  <div class="col-sm-8 col-sm-offset-2">
+    <form role="form">
+            <div class="input-group">
+              <input type="text" class="form-control input-sm" placeholder="By ID.." id="searchID">
+              <span class="input-group-btn">
+                
+                <button class="btn btn-default btn-sm" type="submit" ng-click="$ctrl.searchForPet()"
+                 ng-if="!$ctrl.searchSuccess">
+                <span class="glyphicon glyphicon-search"></span></button>
+                
+                
+                 <button class="btn btn-default btn-sm" type="submit" ng-click="$ctrl.clearSearch()"
+                 ng-if="$ctrl.searchSuccess">
+                <span class="glyphicon glyphicon-ban-circle"></span>Clear</button>
+              </span>
+            </div>
+    </form>
+  </div>
+</div>
+</div>
+<div class="jumbotron text-center" ng-if="$ctrl.searchSuccess" style="background: none; height: 600px;">
+<h3>Search Result <span class="label label-success"></span></h3>
+<div class="row" ng-if="$ctrl.searchSuccess">
+  <div class="col-sm-12 col-md-12">
+    <div class="thumbnail">
+      <img src="{{ $ctrl.pet.photoUrl }}" title="source: tinypic.com" />
+        <h3>Name: {{ $ctrl.pet.name }}</h3>
+        <h3>Status: {{ $ctrl.pet.status }}</h3>
+        <h3>Color: {{ $ctrl.pet.color }}</h3>
+        <h3>Category: {{ $ctrl.pet.category }}</h3>
+        <p>Favourite Bank: {{ $ctrl.pet.bank }}</p>
+        <p><a ng-click="$ctrl.reservePet($ctrl.pet.id)" class="btn btn-primary" role="button" ng-disabled="pet.status === 'sold' || pet.status === 'pending'">Reserve</a> 
+        <a ng-click="$ctrl.removePet($ctrl.pet.id)" class="btn btn-default" ng-disabled="pet.status === 'sold' || pet.status === 'pending'" role="button">Remove</a></p>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+<!--  Add a pet form section  -->
+<div class="jumbotron text-center" style="background-image: -webkit-linear-gradient(top, #D1F2EB 0%, #ffffff 100%)">
+<h3>List Your Pet! <span class="label label-warning">Sell</span></h3>
+<a name="sell"></a>
+<div class="row">
+  <div class="col-sm-12 col-md-12">
+    <div class="thumbnail" style="border: 1px solid #ddd; background-image: -webkit-linear-gradient(top,#ffffff 0%, #D1F2EB 100%)">
+        <h3>Photo Link <input type="text" id="photo" placeholder="http://i68.tinypic.com/...">
+        <a href="http://tinypic.com/?ref" target="_blank" class="btn" role="button">Create Link!</a></h3>
+        <h3>Name <input type="text" id="name" maxlength="10"></h3>
+        <h3>Color <input type="text" id="color" maxlength="10"></h3>
+        <h3>Category <input type="text" id="category" maxlength="10"></h3>
+        <h3>Favorite Bank <input type="text" id="bank" maxlength="10"></h3>
+        <p>{{ ::$ctrl.note }}</p>
+        <p><a ng-click="$ctrl.addPet()" class="btn btn-primary" role="button">List!</a></p> 
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--  Overlay for all pet operations -->
+<div id="feedbackModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" ng-click="$ctrl.closeModal()"></button>
+        <h4 class="modal-title">{{ $ctrl.message }}</h4>
+      </div>
+      <div class="modal-body">
+        <p>{{ $ctrl.secondaryMessage }}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="$ctrl.closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!--  Inventory section that lists all pets  -->
+<div class="jumbotron text-center" style="background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #910606 100%); height: 550vh;">
+<h3>Inventory <span class="label label-success">Buy</span></h3>
+<a name="invent"></a>
+<div class="row">
+  <div class="col-sm-6 col-md-4" ng-repeat="pet in $ctrl.allPets">
+    <div class="thumbnail">
+      <img src="{{ pet.photoUrl }}" title="source: tinypic.com" />
+        <h3>Name: {{ pet.name }}</h3>
+        <h3>Status: {{ pet.status }}</h3>
+        <h3>Color: {{ pet.color }}</h3>
+        <h3>Category: {{ pet.category }}</h3>
+        <p>Favourite Bank: {{ pet.bank }}</p>
+        <p><a ng-click="$ctrl.reservePet(pet.id)" class="btn btn-primary" role="button" ng-disabled="pet.status === 'sold' || pet.status === 'pending'">Reserve</a> 
+        <a ng-click="$ctrl.removePet(pet.id)" class="btn btn-default" ng-disabled="pet.status === 'sold' || pet.status === 'pending'" role="button">Remove</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+	
+
+
+

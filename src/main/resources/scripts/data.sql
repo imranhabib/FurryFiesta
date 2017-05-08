@@ -1,0 +1,13 @@
+INSERT INTO Pets (bank, category, color, name, photourl, status) VALUES ( 'RBC', 'Elephant', 'black', 'Cocoa', 'http://i66.tinypic.com/2q8dnc2.jpg', 'available');
+INSERT INTO Pets (bank, category, color, name, photourl, status) VALUES ( 'RBC', 'Giraffe', 'orange', 'Stretch', 'http://i66.tinypic.com/2je370x.jpg', 'sold');
+INSERT INTO Pets (bank, category, color, name, photourl, status) VALUES ( 'RBC', 'Gopher', 'white', 'Marcus', 'http://i64.tinypic.com/2ef0v8h.jpg', 'available');
+INSERT INTO Pets (bank, category, color, name, photourl, status) VALUES ( 'RBC', 'Gorilla', 'black', 'Harambe', 'http://i64.tinypic.com/ei5udz.jpg', 'pending');
+INSERT INTO Pets (bank, category, color, name, photourl, status) VALUES ( 'RBC', 'Meerkat', 'brown', 'Murphy', 'http://i68.tinypic.com/331euyf.jpg', 'sold');
+INSERT INTO Pets (bank, category, color, name, photourl, status) VALUES ( 'RBC', 'Owl', 'white', 'Hoot Hoot', 'http://i63.tinypic.com/acfjbk.jpg', 'available');
+INSERT INTO Pets (bank, category, color, name, photourl, status) VALUES ( 'RBC', 'Panda', 'black', 'Paul', 'http://i64.tinypic.com/4lslua.jpg', 'pending');
+INSERT INTO Pets (bank, category, color, name, photourl, status) VALUES ( 'RBC', 'Polar Bear', 'white', 'Bruno', 'http://i65.tinypic.com/1mccm.jpg', 'available');
+INSERT INTO Pets (bank, category, color, name, photourl, status) VALUES ( 'RBC', 'Puffy', 'grey', 'Puffy', 'http://i68.tinypic.com/wtwope.jpg', 'pending');
+INSERT INTO Pets (bank, category, color, name, photourl, status) VALUES ( 'RBC', 'Red Panda', 'red', 'Rufus', 'http://i68.tinypic.com/wukneq.jpg', 'available');
+INSERT INTO Pets (bank, category, color, name, photourl, status) VALUES ( 'RBC', 'Snow Bird', 'white', 'Snowy', 'http://i68.tinypic.com/xpsgnt.jpg', 'sold');
+INSERT INTO Pets (bank, category, color, name, photourl, status) VALUES ( 'RBC', 'Turtle', 'blue', 'Sam', 'http://i64.tinypic.com/sn04z7.jpg', 'available');
+INSERT INTO Pets (bank, category, color, name, photourl, status) VALUES ( 'RBC', 'Walrus', 'grey', 'Wally', 'http://i64.tinypic.com/2poa2kn.jpg', 'available');
