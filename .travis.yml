@@ -5,8 +5,9 @@ jdk:
 before_install:
  - chmod +x mvnw
 
-before_install:
-  - nvm install $NODE_VERSION
+node_js:
+  - "iojs"
+  - "7"
 before_script:
   - npm install
 script:
