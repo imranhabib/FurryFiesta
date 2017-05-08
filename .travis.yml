@@ -5,10 +5,3 @@ jdk:
 before_install:
  - chmod +x mvnw
 
-node_js:
-  - "iojs"
-  - "7"
-before_script:
-  - npm install
-script:
-  - npm start
