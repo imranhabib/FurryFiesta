@@ -37,8 +37,8 @@
         <h3>Color: {{ $ctrl.pet.color }}</h3>
         <h3>Category: {{ $ctrl.pet.category }}</h3>
         <p>Favourite Bank: {{ $ctrl.pet.bank }}</p>
-        <p><a ng-click="$ctrl.reservePet($ctrl.pet.id)" class="btn btn-primary" role="button" ng-disabled="pet.status === 'sold' || pet.status === 'pending'">Reserve</a> 
-        <a ng-click="$ctrl.removePet($ctrl.pet.id)" class="btn btn-default" ng-disabled="pet.status === 'sold' || pet.status === 'pending'" role="button">Remove</a></p>
+        <p><button ng-click="$ctrl.reservePet($ctrl.pet.id)" class="btn btn-primary" ng-disabled="pet.status === 'sold' || pet.status === 'pending'">Reserve</button> 
+        <button ng-click="$ctrl.removePet($ctrl.pet.id)" class="btn btn-default" ng-disabled="pet.status === 'sold' || pet.status === 'pending'">Remove</button></p>
       </div>
     </div>
   </div>
@@ -79,6 +79,7 @@
         <p>{{ $ctrl.secondaryMessage }}</p>
       </div>
       <div class="modal-footer">
+      <button type="button" class="btn btn-default" ng-click="$ctrl.closeModal()">Continue</button>
         <button type="button" class="btn btn-default" ng-click="$ctrl.closeModal()">Close</button>
       </div>
     </div>
@@ -100,8 +101,8 @@
         <h3>Color: {{ pet.color }}</h3>
         <h3>Category: {{ pet.category }}</h3>
         <p>Favourite Bank: {{ pet.bank }}</p>
-        <p><a ng-click="$ctrl.reservePet(pet.id)" class="btn btn-primary" role="button" ng-disabled="pet.status === 'sold' || pet.status === 'pending'">Reserve</a> 
-        <a ng-click="$ctrl.removePet(pet.id)" class="btn btn-default" ng-disabled="pet.status === 'sold' || pet.status === 'pending'" role="button">Remove</a></p>
+        <p><button ng-click="$ctrl.reservePet(pet.id)" class="btn btn-primary" ng-disabled="pet.status === 'sold' || pet.status === 'pending'">Reserve</button> 
+        <button ng-click="$ctrl.removePet(pet.id)" class="btn btn-default" ng-disabled="pet.status === 'sold' || pet.status === 'pending'">Remove</button></p>
       </div>
     </div>
   </div>
