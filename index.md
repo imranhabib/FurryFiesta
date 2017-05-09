@@ -5,7 +5,8 @@
 
 * **Run**: mvn spring-boot:run (**local**: localhost:8090  **cloud**: [https://furryfiesta.herokuapp.com/](https://furryfiesta.herokuapp.com/))
 
-* npm install (first run)
+* Navigate to src\main\resources\static
+  * npm install (first run)
   * npm run build
   * npm start
 
