@@ -3,13 +3,13 @@
 
 * Clone the repository 
 
-* Run: mvn spring-boot:run (local: localhost:8090 | cloud: [https://furryfiesta.herokuapp.com/](https://furryfiesta.herokuapp.com/))
+* **Run**: mvn spring-boot:run (**local**: localhost:8090 | **cloud**: [https://furryfiesta.herokuapp.com/](https://furryfiesta.herokuapp.com/))
 
 * npm install (first run)
   * npm run build
   * npm start
 
-* Testing: npm test
+* **Testing**: npm test
 
 *Note: Ensure the correct server ref (local or cloud) is set, search project for 'server-reference' to find location*
 
