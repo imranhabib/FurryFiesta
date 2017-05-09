@@ -48,6 +48,7 @@ export default class inventoryController {
 	 Reserve a pet by setting its status to pending
 	 */
 	reservePet(id){	
+		this.id = id; 
 		this.message = 'Reserve Pet'; 
 		this.secondaryMessage = 'Are you sure you want to reserve this pet?';
 		$('#feedbackModal').modal('show');
@@ -56,8 +57,13 @@ export default class inventoryController {
 	/* 
 	 Confirm the pet reservation and make the service call
 	 */
-	confirmReserve(){
-		
+	confirmReserve(){		
+	   if(this.message === 'Reserve Pet'){
+		   let petToUpdate = this.allPets.find((x) => x.id === this.id);
+ 		   petToUpdate.status = 'pending';
+ 		   this.closeModal(); 
+		   
+	   }
 	}
 		
 	searchForPet(){
@@ -127,8 +133,8 @@ export default class inventoryController {
 	/* 
 	 Update the status of the pet
 	 */
-	updatePetById(id){
-		this.id = id;
+	updatePetById(pet){
+		
 		this.$http({
 			  method: 'PUT',
 			  url: this.gateway + this.id, 

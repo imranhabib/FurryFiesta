@@ -31,7 +31,7 @@
 <div class="row" ng-if="$ctrl.searchSuccess">
   <div class="col-sm-12 col-md-12">
     <div class="thumbnail">
-      <img src="{{ $ctrl.pet.photoUrl }}" title="source: tinypic.com" />
+      <img src="{{ $ctrl.pet.photoUrl }}" alt="Not found" title="source: tinypic.com" />
         <h3>Name: {{ $ctrl.pet.name }}</h3>
         <h3>Status: {{ $ctrl.pet.status }}</h3>
         <h3>Color: {{ $ctrl.pet.color }}</h3>
@@ -79,7 +79,7 @@
         <p>{{ $ctrl.secondaryMessage }}</p>
       </div>
       <div class="modal-footer">
-      <button type="button" class="btn btn-default" ng-click="$ctrl.closeModal()">Continue</button>
+      <button type="button" class="btn btn-default" ng-click="$ctrl.confirmReserve()">Continue</button>
         <button type="button" class="btn btn-default" ng-click="$ctrl.closeModal()">Close</button>
       </div>
     </div>

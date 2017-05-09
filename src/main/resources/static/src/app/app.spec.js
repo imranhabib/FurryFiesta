@@ -29,16 +29,31 @@ describe('app', () => {
 	    let $http; 
 	    let createController = inventoryController; 
 	    let defaultValue; 
+	    let defaultName; 
+	    let pet = {}; 
 
 	    beforeEach(inject(function ($rootScope, $controller, _$http_) {
 	    	$http = _$http_;
 	        scope = $rootScope.$new();
 	        defaultValue = 'unknown'; 
+	        defaultName = 'John Doe';
+	              
+	        pet = {
+	        		'breed': 'Turtle', 
+	        		'name': 'Sam', 
+	        		'bank': 'RBC', 
+	        		'status': 'available', 
+	        		'photoUrl': 'http://i64.tinypic.com/sn04z7.jpg', 
+	        		'color': 'blue'
+	        }    
+	        
 	    }));
 	    
-	    it('should have a default values set to unknown', function() {
-	        var controller = inventoryController;
+	    it('should have default values set to unknown', function() {
+	    	var controller = inventoryController;
+	        
 	        expect(defaultValue).toBe('unknown');
+	        expect(defaultName).toBe('John Doe'); 
 	    });
 	    
 	    
