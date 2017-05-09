@@ -5,11 +5,12 @@ import bunny from '../../public/img/bunny.jpeg';
 import pug from '../../public/img/pug.jpg';
 import puppies from '../../public/img/puppies.jpg';
 import icon from '../../public/img/favicon.png';
+import dog from '../../public/img/dog.jpg';
 
-export default class Inventory {
+export default class inventoryController {
 	constructor($scope, $http){
 
-		this.gateway = 'http://localhost:8090/pets/'; 
+		this.gateway = 'https://furryfiesta.herokuapp.com/pets/'; 
 		this.getAll = this.gateway + 'all'; 
 		this.remove = this.gateway + 'remove/'; 
 		this.add = this.gateway + 'add'; 
@@ -19,7 +20,9 @@ export default class Inventory {
 		this.bunny = bunny; 
 		this.pug = pug; 
 		this.icon = icon; 
-		this.puppies = puppies; 
+		this.puppies = puppies;
+		this.dog = dog; 
+		this.style = '.dog';  
 		this.id; 
 		this.note = 'All empty fields will be given a default value upon listing'; 
 		this.defaultPhotoUrl = 'http://i68.tinypic.com/kd0gms.png';
@@ -34,9 +37,6 @@ export default class Inventory {
 		
 		this.retrieveAll();  
 		
-
-		
-		
 	}
 	
 	/* 
@@ -48,15 +48,13 @@ export default class Inventory {
 		$('#feedbackModal').modal('show');
 	}
 	
-	
 	/* 
 	 Confirm the pet reservation and make the service call
 	 */
 	confirmReserve(){
 		
 	}
-	
-	
+		
 	searchForPet(){
 	  let petId = parseInt(document.getElementById("searchID").value); 
 	  if(isNaN(petId)){
@@ -64,15 +62,10 @@ export default class Inventory {
 		  this.secondaryMessage = 'Please enter numbers only'; 
 		  $('#feedbackModal').modal('show');
 	  } else {
-		  this.getPetById(petId);
-		  
-		  
+		  this.getPetById(petId);		  
 	  }
 	    
 	}
-	
-	
-	
 	
 	
 	/* 
@@ -81,8 +74,7 @@ export default class Inventory {
 	removePet(id){
 		this.removePetById(id); 
 	}
-	
-	
+		
 	
 	/* 
 	 Retrieve all pets and populate view
@@ -94,7 +86,6 @@ export default class Inventory {
 			}).then((response) => {
 			   this.allPets = response.data;  
 		}, (error) => {
-			console.log(error)
 		});
 		
 	}
@@ -117,7 +108,6 @@ export default class Inventory {
 	
 	
 	mapPet(pet){
-		console.log(pet);
 		this.pet.name = pet.name; 
 		this.pet.color = pet.color; 
 		this.pet.category = pet.category; 
@@ -138,7 +128,6 @@ export default class Inventory {
 			  method: 'PUT',
 			  url: this.gateway + this.id, 
 			}).then((response) => {  
-			   console.log(response); 
 		}, (error) => {
 		});
 	}
@@ -219,9 +208,6 @@ export default class Inventory {
 	clearSearch(){
 		this.searchSuccess = false; 
 	}
-	
-	
-	
 	
 	
 	/* 

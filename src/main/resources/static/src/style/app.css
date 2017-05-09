@@ -27,6 +27,14 @@ footer {
 }
 
 
+.jumbotronDog {
+	background: url('../public/img/rsz_dogingrass.jpg') no-repeat center center;
+	height: 100vh;
+    margin-bottom: 0px;
+    padding-top: 40px;
+}
+
+
   body {
       font: 400 15px/1.8 Lato, sans-serif;
       color: #777;
