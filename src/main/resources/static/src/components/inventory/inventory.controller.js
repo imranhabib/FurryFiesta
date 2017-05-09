@@ -10,13 +10,13 @@ import dog from '../../public/img/dog.jpg';
 export default class inventoryController {
 	constructor($scope, $http){
 
-		this.gateway = 'https://furryfiesta.herokuapp.com/pets/';
+		//this.gateway = 'https://furryfiesta.herokuapp.com/pets/';
 		/*
 		 * Uncomment the gateway below and comment out the 
 		 * Heroku call to run the project on a local Tomcat server
 		 * keyword: server-reference
 		 */
-		// this.gateway = 'http://localhost:8080/'; 
+		this.gateway = 'http://localhost:8080/'; 
 		this.getAll = this.gateway + 'all'; 
 		this.remove = this.gateway + 'remove/'; 
 		this.add = this.gateway + 'add'; 
