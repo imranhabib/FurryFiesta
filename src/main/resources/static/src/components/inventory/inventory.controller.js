@@ -16,7 +16,7 @@ export default class inventoryController {
 		 * Heroku call to run the project on a local Tomcat server
 		 * keyword: server-reference
 		 */
-		this.gateway = 'http://localhost:8080/'; 
+		this.gateway = 'http://localhost:8090/'; 
 		this.getAll = this.gateway + 'all'; 
 		this.remove = this.gateway + 'remove/'; 
 		this.add = this.gateway + 'add'; 
